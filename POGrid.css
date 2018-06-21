@@ -1,0 +1,42 @@
+h2 {
+    text-align: center;
+}
+
+.k-grid-content tr {
+    background-color: darkgrey;
+}
+
+.k-grid-content .k-alt {
+    background-color: white;
+}
+.k.widget.k-window {
+
+    width: 500px;
+    height: 500px;
+}
+
+/*.RadToolBar_Silk .rtbOuter
+{
+    background-image : none !important;
+    color : purple !important;
+    background-color : White !important;
+}*/
+
+.k-primary {
+    background-color: #64a1d5;
+    background-image: linear-gradient(to bottom, #64a1d5, #428bca);
+    color: #fff;
+    border-color: #428bca;
+    min-width: 100px;
+}
+
+.k-primary:hover {
+    background-color: #428bca;
+    color: #fff;
+    border-color: #428bca;
+}
+
+.k-primary.k-state-disabled, .primary.k-state-disabled:hover {
+    background-color: #8dc5e1;
+    color: #fff;
+}

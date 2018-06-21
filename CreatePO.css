@@ -1,0 +1,312 @@
+body {
+    font-size: 15px;
+}
+
+#purchaseOrderForm {
+    border: groove;
+    width: 1500px;
+
+}
+
+.Header1 {
+
+}
+
+.formTitle {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.line {
+    /*padding: 5px 5px 5px 5px;*/
+
+}
+
+#row {
+    /*padding: 5px 5px 5px 5px;*/
+
+}
+
+.offset-4 {
+    margin-left: 30%;
+}
+
+.text {
+
+}
+
+.col-3 {
+
+}
+
+.input {
+    padding: 5px 5px 5px 5px;
+}
+
+.formInput {
+    width: 350px;
+    background-color: lightgrey;
+    border: inset;
+}
+
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+}
+
+input::placeholder {
+    color: black;
+    opacity: 1;
+}
+
+#clientInput {
+
+}
+
+#poNumInput {
+
+}
+
+#poDateInput {
+
+}
+
+#factoryInput {
+
+}
+
+#nameLangInput {
+
+}
+
+
+
+#fAddressInput {
+
+}
+
+#addressLangInput {
+
+}
+
+#fContactInput {
+
+}
+
+#shippingDateInput {
+
+}
+
+#portInput {
+
+}
+
+#shipToCompanyInput {
+
+}
+
+#shipToAddressInput {
+
+}
+
+#unitNumInput {
+
+}
+
+#vendorNumInput {
+
+}
+
+#descriptionInput {
+
+}
+
+#uomInput {
+
+}
+
+#qtyInput {
+
+}
+
+#shipDateInput {
+
+}
+
+#submitBtn {
+    width: 200px;
+    height: 50px;
+    background-color: lightgrey;
+    font-weight: bold;
+}
+
+
+/*p * {
+    display: block;
+}
+
+input.mail {
+    -webkit-appearance: none;
+    width: 100%;
+    border: 1px solid #333;
+    margin: 0;
+    font-family: inherit;
+    font-size: 90%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}*/
+
+/* This is our style for the invalid fields */
+
+input.invalid {
+    border-color: #900;
+    background-color: #FDD;
+}
+
+input:focus.invalid {
+    outline: none;
+}
+
+/* This is the style of our error messages */
+
+.error_show {
+    width: 80%;
+    padding: 0;
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+    border-radius: 0 0 5px 5px;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*.error.active {
+    padding: 0.3em;
+}*/
+
+.text:after {
+    content:" *";
+    color: red;
+}
+
+
+/*
+.required label {
+    font-weight: bold;
+}
+.required label:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}*/
+
+.error{
+    display: none;
+    margin-left: 10px;
+}
+
+/*.error_show{
+    color: red;
+    margin-left: 10px;
+}*/
+
+input.invalid, textarea.invalid{
+    border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+    border: 2px solid green;
+}
+
+input:focus.invalid {
+    outline: none;
+}
+
+.k-dropdown .k-state-default
+{
+    background-color: #428bca;
+    border-color: #b0b0b0
+    background-image: none;
+    color: #428bca;
+}
+
+.k-dropdown .k-dropdown-wrap {
+    color: #000;
+    background-color: #005a8c;
+}
+.k-dropdown .k-state-hover {
+    background-color: white;
+    border-color: #005a8c;
+    background-color: #005a8c;
+    color: #428bca;
+}
+.k-dropdown .k-state-focused {
+    background-color: white;
+    color: #428bca;
+}
+
+.k-dropdown .k-state-disabled .k-input{
+    background-color: #f2f2f2;
+    color: #333333;
+}
+.k-dropdown .k-state-disabled{
+    background-color: #f2f2f2;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #b0b0b0;
+    color: #005a8c;
+}
+/*.
+
+/*.k-dropdown{
+& .k-dropdown-wrap {
+    color: #000;
+}
+.k-state-default{
+     border-color: #b0b0b0;
+ }
+.k-state-hover {
+     background-color: white;
+     border-color: #005a8c;
+ }
+.k-state-focused {
+     background-color: white;
+ }
+.k-state-disabled{
+.k-input{
+    background-color: #f2f2f2;
+    color: #333333;
+}
+background-color: #f2f2f2;
+border-width: 1px;
+border-style: solid;
+border-color: #b0b0b0;
+}
+}
+}*/
+
+
+/*.k-dropdown {
+    background-color: transparent !important;
+}*/
+/*.k-dropdown .k-dropdown-wrap, .k-dropdown.k-state-border-down .k-dropdown-wrap.k-state-border-down {*/
+    /*padding: 5px !important;*/
+    /*border: 1px solid #959694 !important;*/
+    /*border-radius: 20px 20px 20px 20px !important;*/
+/*}*/
+/*.k-dropdown .k-dropdown-wrap .k-select, .k-ie .k-dropdown .k-dropdown-wrap .k-select, .k-ff .k-dropdown .k-dropdown-wrap .k-select {*/
+    /*background-color: #f6f7ef !important;*/
+    /*padding: 8px !important;*/
+    /*border-left: solid #959694 thin !important;*/
+    /*border-right: solid #959694 thin !important;*/
+    /*border-radius: 0 20px 20px 20px !important;*/
+/*}*/
+/*
+[data-role="popup"] {
+    background-color: #fff !important;
+    border-radius: 1px !important;
+}
+[data-role="popup"] ul li[class="k-item k-state-hover"], [data-role="popup"] ul li[class="k-item k-state-selected k-state-focused"] {
+    border-radius: 0px;
+}*/

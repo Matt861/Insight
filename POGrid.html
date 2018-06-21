@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Orders</title>
+
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2018.2.516/styles/kendo.common.min.css" />
+
+    <link href="http://cdn.kendostatic.com/2012.1.322/styles/kendo.default.min.css" rel="stylesheet" />
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/kendo-ui-core/2014.1.416/styles/kendo.default.mobile.min.css"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.all.min.js"></script>
+    <!--<script src="http://kendo.cdn.telerik.com/2018.2.516/js/kendo.ui.core.min.js"></script>-->
+
+    <link rel="stylesheet" href="POGrid.css" />
+</head>
+
+<h2>Purchase Orders</h2>
+
+<body>
+<div class="grid-actions"><button id="create-button" class="k-button k-primary">new</button></div>
+<div id="Main-Content">
+
+    <div id="custom-window">
+        <script type="text/javascript">
+            $("#create-button").click(function (e) {
+                e.preventDefault();
+                myWindow.refresh({
+                    url: "CreatePO.html"
+
+                });
+                myWindow.center().open();
+                // myWindow.opener.location.href = "CreatePO.html";
+                //var grid = $("#grid").data("kendoGrid");
+                //grid.addRow();
+            });
+        </script>
+    </div>
+
+    <div id="grid"></div>
+
+</div>
+
+</body>
+</html>
+
+<!--<script id="popup_editor" type="text/x-kendo-template"></script>-->
+
+
+<script type="text/javascript">
+
+    var myWindow = $("#custom-window").kendoWindow({
+        modal: true,
+        width: "600px",
+        height: "850px",
+        actions: ["Minimize", "Maximize", "Close"],
+        resizable: true,
+        title: "Create Purchase Order",
+        iframe: true,
+        visible: false,
+        draggable: true,
+    }).data("kendoWindow");
+
+
+    $(function() {
+
+        var people = [
+            {
+                client: "testClient1", POnum: 1, PODate: "01/01/2000,", factory: "factory1", factoryAddress: "100 test lane, San Antonio, TX 78266",
+                factoryContact: "testContact1", shippingDate: "01/02/2000", port: 5, shipToCompany: "testCompany1",
+                shipToAddress: "123 Shipping Dr., Austin, TX, 123456", unitNum: 000001, uom: "lbs", qty: 5, shipDate: "01/03/2000",
+                desc: "This is a description of the Product Order"
+            },
+            {
+                client: "testClient2", POnum: 2, PODate: "01/01/2001,", factory: "factory2", factoryAddress: "100 test lane, San Antonio, TX 78266",
+                factoryContact: "testContact2", shippingDate: "01/02/2001", port: 10, shipToCompany: "testCompany2",
+                shipToAddress: "123 Shipping Dr., Austin, TX, 123456", unitNum: 000001, uom: "ounce", qty: 10, shipDate: "01/03/2001",
+                desc: "This is a description of the Product Order"
+            },
+            {
+                client: "testClient3", POnum: 3, PODate: "01/01/2002,", factory: "factory3", factoryAddress: "100 test lane, San Antonio, TX 78266",
+                factoryContact: "testContact3", shippingDate: "01/02/2002", port: 15, shipToCompany: "testCompany3",
+                shipToAddress: "123 Shipping Dr., Austin, TX, 123456", unitNum: 000001, uom: "ft", qty: 15, shipDate: "01/03/2002",
+                desc: "This is a description of the Product Order"
+            }
+        ];
+
+
+        var myGrid = $("#grid").kendoGrid({
+
+            columns:
+                [{ field: "client", title: "Client", width: 100 },
+                    { field: "POnum", title: "PO Number" },
+                    { field: "PODate", title: "PO Date" },
+                    { field: "factory", title: "Factory" },
+                    { field: "factoryAddress", title: "Factory Address" },
+                    { field: "factoryContact", title: "Factory Contact" },
+                    { field: "shippingDate", title: "Shipping Date" },
+                    { field: "port", title: "Port" },
+                    { field: "shipToCompany", title: "Ship To Company" },
+                    { field: "shipToAddress", title: "Ship To Address" },
+                    { field: "unitNum", title: "Unit Number" },
+                    { field: "uom", title: "Unit of Measure" },
+                    { field: "qty", title: "Quantity" },
+                    { field: "shipDate", title: "Ship Date" },
+                    { field: "desc", title: "Description" },
+                    {
+                        command: ["edit", "pdf", "destroy"],
+                        //title: "&nbsp;",
+                        width: "200px"
+                    }],
+
+            dataSource: {
+                data: people,
+                pageSize: 20
+            },
+            toolbar: [
+                "excel",
+                //"pdf",
+                { name: "save", text: "Save" }],
+            editable: true,
+            height: 550,
+            scrollable: true,
+            sortable: true,
+            filterable: true,
+            editable: {
+                mode: "popup"
+                //template: kendo.template($("#popup_editor").html())
+            },
+            pageable: {
+                refresh: true,
+                pageSizes: true,
+                buttonCount: 5
+            },
+        });
+
+        /*var thisURL = "http://localhost:63342/PurchaseOrders/POGrid.html?_ijt=ovtrd8abtghijdbn6i7vhp0vp8";*/
+
+/*        $("#create-button").click(function (e) {
+            e.preventDefault();
+            myWindow.refresh({
+                url: "CreatePO.html"
+
+            });
+            myWindow.center().open();
+           // myWindow.opener.location.href = "CreatePO.html";
+            //var grid = $("#grid").data("kendoGrid");
+            //grid.addRow();
+        });*/
+
+/*        function Openwindow() {
+            //To Open Child window
+            //This code will open webform1.aspx page in popup window
+            window.open("CreatePO.html", "windowName", "width=200,height=200,scrollbars=no");
+        }*/
+    });
+</script>
+
